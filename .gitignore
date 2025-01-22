@@ -1,0 +1,18 @@
+# ADMIN/FRONTEND/public/images/.DS_Store
+# APP/FRONTEND/assets/.DS_Store
+# APP/FRONTEND/assets/Image/.DS_Store
+# APP/FRONTEND/lib/.DS_Store
+# APP/FRONTEND/lib/src/.DS_Store
+# APP/FRONTEND/lib/src/pages/.DS_Store
+# APP/FRONTEND/lib/src/utilities/.DS_Store
+# .DS_Store
+# APP/BACKEND/node_modules
+
+# MacOS system files
+.DS_Store
+APP/FRONTEND/**/.DS_Store
+ADMIN/FRONTEND/**/.DS_Store
+
+# Node.js dependencies
+APP/BACKEND/node_modules/
+ADMIN/BACKEND/node_modules/
