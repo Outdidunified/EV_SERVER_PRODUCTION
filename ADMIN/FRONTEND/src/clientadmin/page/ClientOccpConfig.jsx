@@ -82,7 +82,7 @@ const ClientOccpConfig = ({ userInfo, handleLogout }) => {
     // Get the action payload
     const getActionPayload = async () => {
         try {
-            const response = await axios.get('http://192.168.1.32:4444/OcppConfig/GetAction');
+            const response = await axios.get('http://172.232.189.123:4444/OcppConfig/GetAction');
             const sortedData = response.data.sort((a, b) => a.action.localeCompare(b.action));
 
             setCommandsLibrary(sortedData);
@@ -527,7 +527,7 @@ const ClientOccpConfig = ({ userInfo, handleLogout }) => {
                     Swal.showLoading();
     
                     try {
-                        const response = await axios.get(`http://192.168.1.32:4444/OcppConfig/SendOCPPRequest?id=${chargerId}&req=${encodeURIComponent(JSON.stringify(payload))}&actionBtn=${selectedCommand}`);
+                        const response = await axios.get(`http://172.232.189.123:4444/OcppConfig/SendOCPPRequest?id=${chargerId}&req=${encodeURIComponent(JSON.stringify(payload))}&actionBtn=${selectedCommand}`);
                         const responseData = response.data;
     
                         Swal.close(); // Close the loading alert

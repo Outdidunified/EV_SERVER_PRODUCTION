@@ -23,7 +23,7 @@ const SessionLogs = () => {
             }
 
             setLoading(true); // Start loading
-            const response = await axios.get(`http://192.168.1.32:4444/sessionlog/checkChargerID?charger_id=${chargerId}`);
+            const response = await axios.get(`http://172.232.189.123:4444/sessionlog/checkChargerID?charger_id=${chargerId}`);
 
             if (Array.isArray(response.data.value)) {
                 setResponseData(response.data.value);
