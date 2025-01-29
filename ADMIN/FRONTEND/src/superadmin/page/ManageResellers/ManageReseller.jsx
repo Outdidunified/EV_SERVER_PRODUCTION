@@ -39,7 +39,7 @@ const ManageReseller = ({ userInfo, handleLogout }) => {
     // Get manage reseller data
     useEffect(() => {
         if (!FetchResellersCalled.current) {
-            const url = `/superadmin/FetchResellers`;
+            const url = `${process.env.REACT_APP_SERVER_URL}/superadmin/FetchResellers`;
             axios.get(url).then((res) => {
                 setData(res.data.data); 
                 setLoading(false);

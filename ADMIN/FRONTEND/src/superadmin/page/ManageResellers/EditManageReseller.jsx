@@ -74,7 +74,7 @@ const EditManageReseller = ({ userInfo, handleLogout }) => {
                 reseller_address:reseller_address,
                 modified_by: userInfo.data.email_id,
             };
-            const response = await fetch('/superadmin/UpdateReseller', {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/superadmin/UpdateReseller`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updatedReseller),

@@ -9,7 +9,7 @@ const OcppConfigLog = ({ userInfo, handleLogout }) => {
 
     // Back Ocpp Config 
     const handleOcppConfigBack = () => {
-        navigate('/superadmin/OcppConfig');
+        navigate(`/superadmin/OcppConfig`);
     };
     
     return (

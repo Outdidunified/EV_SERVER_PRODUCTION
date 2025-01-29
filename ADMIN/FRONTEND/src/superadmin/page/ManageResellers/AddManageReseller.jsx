@@ -38,7 +38,7 @@ const AddManageReseller = ({ userInfo, handleLogout }) => {
         try {
             const phoneNumbers = parseInt(phoneNumber);
 
-            const response = await fetch('/superadmin/CreateReseller', {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/superadmin/CreateReseller`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

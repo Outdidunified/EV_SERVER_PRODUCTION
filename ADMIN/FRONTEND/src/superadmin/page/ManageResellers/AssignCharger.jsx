@@ -16,7 +16,7 @@ const AssignCharger = ({ userInfo, handleLogout }) => {
     useEffect(() => {
         const fetchAssignedClients = async () => {
             try {
-                const response = await fetch('/superadmin/FetchChargerDetailsWithSession', {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/superadmin/FetchChargerDetailsWithSession`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

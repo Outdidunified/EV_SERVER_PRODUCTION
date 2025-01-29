@@ -25,7 +25,7 @@ const AssignReseller = ({ userInfo, handleLogout }) => {
     // Fetch Reseller
     useEffect(() => {
         if (!FetchSpecificUserRoleForSelectionCalled.current) {
-            const url = '/superadmin/FetchResellersToAssgin';
+            const url = `${process.env.REACT_APP_SERVER_URL}/superadmin/FetchResellersToAssgin`;
             axios.get(url)
                 .then((res) => {
                     setResellers(res.data.data);
@@ -40,7 +40,7 @@ const AssignReseller = ({ userInfo, handleLogout }) => {
     // Fetch Unallocated charger
     useEffect(() => {
         if (!FetchUnAllocatedChargerToAssginCalled.current) {
-            const url = '/superadmin/FetchUnAllocatedChargerToAssgin';
+            const url = `${process.env.REACT_APP_SERVER_URL}/superadmin/FetchUnAllocatedChargerToAssgin`;
             axios.get(url)
                 .then((res) => {
                     setChargers(res.data.data);
@@ -93,7 +93,7 @@ const AssignReseller = ({ userInfo, handleLogout }) => {
 
         const resellerID = parseInt(reseller_id);
         try {
-            const response = await axios.post('/superadmin/AssginChargerToReseller', {
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/superadmin/AssginChargerToReseller`, {
                 reseller_id: resellerID,
                 charger_ids,
                 modified_by: userInfo.data.email_id

@@ -24,7 +24,7 @@ const AssignClient = ({ userInfo, handleLogout }) => {
     useEffect(() => {
         const fetchAssignedClients = async () => {
             try {
-                const response = await fetch('/superadmin/FetchAssignedClients', {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/superadmin/FetchAssignedClients`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

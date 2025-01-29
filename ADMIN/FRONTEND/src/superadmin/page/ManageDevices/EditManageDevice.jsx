@@ -195,7 +195,7 @@ const EditManageDevice = ({ userInfo, handleLogout }) => {
     // Function to fetch the type name options from the backend and update the connectors
     const updateConnectors = useCallback(async (updatedConnector) => {
         try {
-            const res = await axios.post('/superadmin/fetchConnectorTypeName', {
+            const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/superadmin/fetchConnectorTypeName`, {
                 connector_type: updatedConnector.connector_type
             });
 
@@ -284,7 +284,7 @@ const EditManageDevice = ({ userInfo, handleLogout }) => {
         try {
             const maxCurrents = parseInt(max_current, 10);
             const maxPowers = parseInt(max_power, 10);
-            const response = await fetch('/superadmin/UpdateCharger', {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/superadmin/UpdateCharger`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

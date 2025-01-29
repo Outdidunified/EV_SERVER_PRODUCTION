@@ -18,7 +18,7 @@ const OutputTypeConfig = ({ userInfo, handleLogout }) => {
     // Fetch Output Type Config
     const fetchTagID = useCallback(async () => {
         try {
-            const res = await axios.post('/superadmin/fetchAllOutputType', {
+            const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/superadmin/fetchAllOutputType`, {
                 association_id: userInfo.data.association_id
             });
     
@@ -101,7 +101,7 @@ const OutputTypeConfig = ({ userInfo, handleLogout }) => {
     const addOutputTypeConfig = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('/superadmin/createOutputType', {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/superadmin/createOutputType`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -190,7 +190,7 @@ const OutputTypeConfig = ({ userInfo, handleLogout }) => {
     const editOutputTypeConfig = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('/superadmin/updateOutputType', {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/superadmin/updateOutputType`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -230,7 +230,7 @@ const OutputTypeConfig = ({ userInfo, handleLogout }) => {
     const changeDeActivate = async (e, id) => {
         e.preventDefault();
         try {
-            const response = await fetch('/superadmin/DeActivateOutputType', {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/superadmin/DeActivateOutputType`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -264,7 +264,7 @@ const OutputTypeConfig = ({ userInfo, handleLogout }) => {
     const changeActivate = async (e, id) => {
         e.preventDefault();
         try {
-            const response = await fetch('/superadmin/DeActivateOutputType', {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/superadmin/DeActivateOutputType`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

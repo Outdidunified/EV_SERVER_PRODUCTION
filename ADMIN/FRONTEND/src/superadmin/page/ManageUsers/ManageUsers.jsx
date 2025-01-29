@@ -99,7 +99,7 @@ const ManageUsers = ({ userInfo, handleLogout }) => {
                 const resellerID = parseInt(reseller_id);
                 const password = parseInt(Password);
                 const phone_no = parseInt(phoneNo);
-                const response = await fetch('/superadmin/CreateUser', {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/superadmin/CreateUser`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -143,7 +143,7 @@ const ManageUsers = ({ userInfo, handleLogout }) => {
                 const roleID = parseInt(role.role_id);
                 const password = parseInt(Password);
                 const phone_no = parseInt(phoneNo);
-                const response = await fetch('/superadmin/CreateUser', {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/superadmin/CreateUser`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -193,7 +193,7 @@ const ManageUsers = ({ userInfo, handleLogout }) => {
     // Get Specific User
     useEffect(() => {
         if (!fetchSpecificUserRoleForSelectionCalled.current) {
-            const url = '/superadmin/FetchSpecificUserRoleForSelection';
+            const url = `${process.env.REACT_APP_SERVER_URL}/superadmin/FetchSpecificUserRoleForSelection`;
             axios.get(url)
                 .then((res) => {
                     setSelectionRoles(res.data.data);
@@ -208,7 +208,7 @@ const ManageUsers = ({ userInfo, handleLogout }) => {
     // Get Reseller data
     useEffect(() => {
         if (!FetchResellerForSelectionCalled.current) {
-            const url = '/superadmin/FetchResellerForSelection';
+            const url = `${process.env.REACT_APP_SERVER_URL}/superadmin/FetchResellerForSelection`;
             axios.get(url)
                 .then((res) => {
                     setSelectionReseller(res.data.data);
@@ -230,7 +230,7 @@ const ManageUsers = ({ userInfo, handleLogout }) => {
     // Get user data
     const fetchUsers = async () => {
         try {
-            const url = `/superadmin/FetchUsers`;
+            const url = `${process.env.REACT_APP_SERVER_URL}/superadmin/FetchUsers`;
             const res = await axios.get(url);
             // const activeUsers = res.data.data.filter(user => user.status === true);
             // setData(activeUsers);

@@ -17,7 +17,7 @@ const Profile = ({ userInfo, handleLogout }) => {
     // Fetch profile
     const fetchProfile = useCallback(async () => {
         try {
-            const response = await fetch('/superadmin/FetchUserProfile', {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/superadmin/FetchUserProfile`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -33,7 +33,7 @@ const ManageDevice = ({ userInfo, handleLogout }) => {
     // Get manage charger data
     useEffect(() => {
         if (!fetchDataCalled.current) {
-            const url = `/superadmin/FetchCharger`;
+            const url = `${process.env.REACT_APP_SERVER_URL}/superadmin/FetchCharger`;
             axios.get(url)
                 .then((res) => {
                     setData(res.data.data);

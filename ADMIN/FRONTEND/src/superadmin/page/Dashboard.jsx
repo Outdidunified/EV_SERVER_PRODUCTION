@@ -18,7 +18,7 @@ const Dashboard = ({ userInfo, handleLogout }) => {
     // Get table data
     useEffect(() => {
         if (!fetchDataCalled.current) {
-            const url = `/superadmin/FetchCharger`;
+            const url = `${process.env.REACT_APP_SERVER_URL}/superadmin/FetchCharger`;
             axios.get(url)
                 .then((res) => {
                     setData(res.data.data);

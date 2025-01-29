@@ -18,7 +18,7 @@ const ManageUserRole = ({ userInfo, handleLogout }) => {
     // Fetch user roles
     const fetchUserRoles = async () => {
         try {
-            const res = await axios.get('/superadmin/FetchUserRoles');
+            const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/superadmin/FetchUserRoles`);
             setData(res.data.data);
             setLoading(false);
         } catch (err) {
