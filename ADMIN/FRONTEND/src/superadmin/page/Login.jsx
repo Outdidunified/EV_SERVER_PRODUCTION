@@ -18,7 +18,7 @@ const Login = ({ handleLogin }) => {
     }
     try {
       const parsedPassword =  parseInt(passwords);
-      const response = await fetch(`http://172.232.109.123:6666/superadmin/CheckLoginCredentials`, {
+      const response = await fetch(`http://172.232.109.123:8080/superadmin/CheckLoginCredentials`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
