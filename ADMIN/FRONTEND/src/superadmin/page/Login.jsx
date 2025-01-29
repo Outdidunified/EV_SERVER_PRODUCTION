@@ -18,7 +18,7 @@ const Login = ({ handleLogin }) => {
     }
     try {
       const parsedPassword =  parseInt(passwords);
-      const response = await fetch(`${process.env.SERVER_URL}/superadmin/CheckLoginCredentials`, {
+      const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/superadmin/CheckLoginCredentials`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
